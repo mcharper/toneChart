@@ -11,8 +11,8 @@ export const Swatch = ({palette}: SwatchProps) : JSX.Element => {
           </tr>
           <tr>
               {
-                  palette.map(hexColour => { return(
-                      <td style={{backgroundColor: hexColour}}>{hexColour}</td>
+                  palette.map(hslColour => { return(
+                      <td style={{backgroundColor: hslColour, height: "100px", width: "100px"}}>{hslColour}</td>
                   ); })
               }
           </tr>

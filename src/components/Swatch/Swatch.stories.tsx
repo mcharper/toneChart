@@ -1,5 +1,5 @@
 import { Story } from '@storybook/react';
-import { Swatch, SwatchProps } from './Swatch/Swatch';
+import { Swatch, SwatchProps } from './Swatch';
 
 export default {
   component: Swatch,
