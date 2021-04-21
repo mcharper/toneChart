@@ -1,23 +1,27 @@
-import { Scale } from "../../models/Scale";
-import { scaleData } from "../../models/scaleData";
+import React from "react";
+import { FormControl, InputLabel, Select } from "@material-ui/core";
+import { ScaleSelectorProps } from "./ScaleSelectorProps";
+import { ScaleData } from "../../models/ScaleData";
 
-export interface ScaleSelectorProps {
-  onChange: (scale: Scale) => void
-}
-
-export const ScaleSelector = ({onChange}: ScaleSelectorProps) : JSX.Element => {
+export const ScaleSelector = ({
+  onChange,
+}: ScaleSelectorProps): JSX.Element => {
   return (
-      <>
-        <label htmlFor="scales">Choose a scale:</label>
-
-        <select name="scales" id="scales" onChange={(ev) => onChange((scaleData.filter(s => s.name == ev.target.value))[0])}>
-        {
-          scaleData.map(scale => { 
-            return(
-              <option value={scale.name}>{scale.name}</option>
-            ); })
-        }
-        </select>
-      </>
+    <>
+      <FormControl>
+        <InputLabel htmlFor="scale">Scale</InputLabel>
+        <Select
+          defaultValue="Ionian"
+          id="scale"
+          onChange={(ev) =>
+            onChange(ScaleData.filter((s) => s.name == ev.target.value)[0])
+          }
+        >
+          {ScaleData.map((scale) => {
+            return <option value={scale.name}>{scale.name}</option>;
+          })}
+        </Select>
+      </FormControl>
+    </>
   );
-}
+};
