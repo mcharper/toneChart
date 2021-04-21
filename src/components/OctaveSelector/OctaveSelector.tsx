@@ -1,22 +1,31 @@
-import { FormControl, InputLabel, Select } from "@material-ui/core";
+import { FormControl, InputLabel, Select, Slider } from "@material-ui/core";
+import React from "react";
 
 import { OctaveSelectorProps } from "./OctaveSelectorProps";
+import { useStyles } from "./OctaveSelectorStyles";
 
 export const OctaveSelector = ({
   onChange,
 }: OctaveSelectorProps): JSX.Element => {
+  const classes = useStyles();
+
   return (
-    <FormControl>
+    <div className={classes.root}>
       <InputLabel htmlFor="octave">Octave</InputLabel>
-      <Select
-        defaultValue="4"
+      <Slider
+        name="octave"
         id="octave"
-        onChange={(ev: any) => onChange(ev.target.value)}
-      >
-        {[1, 2, 3, 4, 5, 6, 7, 8].map((octave) => {
-          return <option value={octave}>{octave}</option>;
-        })}
-      </Select>
-    </FormControl>
+        defaultValue={4}
+        aria-labelledby="discrete-slider"
+        valueLabelDisplay="on"
+        onChangeCommitted={(ev, value: any) => {
+          onChange(value);
+        }}
+        step={1}
+        marks
+        min={1}
+        max={8}
+      />
+    </div>
   );
 };

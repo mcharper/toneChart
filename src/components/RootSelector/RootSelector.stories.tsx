@@ -13,6 +13,6 @@ const Template: Story<RootSelectorProps> = (args) => <RootSelector {...args} />;
 export const Default = Template.bind({});
 Default.args = {
   onChange: (root: number | null) => {
-    alert(root);
+    console.log("Root Note is: " + root);
   },
 };

@@ -15,6 +15,6 @@ const Template: Story<OctaveSelectorProps> = (args) => (
 export const Default = Template.bind({});
 Default.args = {
   onChange: (octave: number | null) => {
-    alert(octave);
+    console.log("Octave is: " + octave);
   },
 };

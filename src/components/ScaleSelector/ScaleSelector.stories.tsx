@@ -16,6 +16,6 @@ const Template: Story<ScaleSelectorProps> = (args) => (
 export const Default = Template.bind({});
 Default.args = {
   onChange: (scale: Scale) => {
-    alert(scale.name);
+    console.log("Scale Name is: " + scale.name);
   },
 };
