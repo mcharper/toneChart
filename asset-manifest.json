@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/toneChart/static/css/main.9ee2c36e.chunk.css",
+    "main.js": "/toneChart/static/js/main.7d45d80e.chunk.js",
+    "main.js.map": "/toneChart/static/js/main.7d45d80e.chunk.js.map",
+    "runtime-main.js": "/toneChart/static/js/runtime-main.167c5e98.js",
+    "runtime-main.js.map": "/toneChart/static/js/runtime-main.167c5e98.js.map",
+    "static/css/2.611213c9.chunk.css": "/toneChart/static/css/2.611213c9.chunk.css",
+    "static/js/2.3aa57afe.chunk.js": "/toneChart/static/js/2.3aa57afe.chunk.js",
+    "static/js/2.3aa57afe.chunk.js.map": "/toneChart/static/js/2.3aa57afe.chunk.js.map",
+    "static/js/3.69e31c26.chunk.js": "/toneChart/static/js/3.69e31c26.chunk.js",
+    "static/js/3.69e31c26.chunk.js.map": "/toneChart/static/js/3.69e31c26.chunk.js.map",
+    "index.html": "/toneChart/index.html",
+    "static/css/2.611213c9.chunk.css.map": "/toneChart/static/css/2.611213c9.chunk.css.map",
+    "static/css/main.9ee2c36e.chunk.css.map": "/toneChart/static/css/main.9ee2c36e.chunk.css.map",
+    "static/js/2.3aa57afe.chunk.js.LICENSE.txt": "/toneChart/static/js/2.3aa57afe.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.167c5e98.js",
+    "static/css/2.611213c9.chunk.css",
+    "static/js/2.3aa57afe.chunk.js",
+    "static/css/main.9ee2c36e.chunk.css",
+    "static/js/main.7d45d80e.chunk.js"
+  ]
+}
