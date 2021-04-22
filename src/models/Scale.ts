@@ -1,5 +1,7 @@
-
 export interface Scale {
-    name: string
-    pattern: Array<number>
+  id: number;
+  name: string;
+  description: string;
+  image: string;
+  pattern: Array<number>;
 }

@@ -1,4 +1,3 @@
-import React from "react";
 import { Piano, KeyboardShortcuts, MidiNumbers } from "react-piano";
 import "react-piano/dist/styles.css";
 
@@ -29,7 +28,7 @@ export const PianoKeyboard = ({
       stopNote={(midiNumber: number) => {
         // Stop playing a given note - see notes below
       }}
-      width={1000}
+      width={500}
       keyboardShortcuts={keyboardShortcuts}
     />
   );

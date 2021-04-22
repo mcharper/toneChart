@@ -1,27 +1,29 @@
-import React from "react";
-import { FormControl, InputLabel, Select } from "@material-ui/core";
+import GridList from "@material-ui/core/GridList";
+import GridListTile from "@material-ui/core/GridListTile";
+import GridListTileBar from "@material-ui/core/GridListTileBar";
+
 import { ScaleSelectorProps } from "./ScaleSelectorProps";
-import { ScaleData } from "../../models/ScaleData";
+import { scales } from "../../models/Scales";
+import { Scale } from "../../models/Scale";
+import { useStyles } from "./ScaleSelectorStyles";
 
 export const ScaleSelector = ({
   onChange,
 }: ScaleSelectorProps): JSX.Element => {
+  const classes = useStyles();
+
   return (
-    <>
-      <FormControl>
-        <InputLabel htmlFor="scale">Scale</InputLabel>
-        <Select
-          defaultValue="Ionian"
-          id="scale"
-          onChange={(ev) =>
-            onChange(ScaleData.filter((s) => s.name == ev.target.value)[0])
-          }
+    <GridList className={classes.root}>
+      {scales.map((scale: Scale) => (
+        <GridListTile
+          key={scale.id}
+          onClick={() => onChange(scale)}
+          className={classes.tile}
         >
-          {ScaleData.map((scale) => {
-            return <option value={scale.name}>{scale.name}</option>;
-          })}
-        </Select>
-      </FormControl>
-    </>
+          <img src={scale.image} alt={scale.image} />
+          <GridListTileBar title={scale.name} subtitle={scale.description} />
+        </GridListTile>
+      ))}
+    </GridList>
   );
 };

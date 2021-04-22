@@ -8,10 +8,19 @@
   background-color: #282c34;
   color: white;
   display: flex;
-  font-size: calc(10px + 2vmin);
   flex-direction: column;
   justify-content: center;
   min-height: 6vh;
+}
+
+.App-header h1 {
+  font-size: 6vh;
+  margin: 0.75vh 0 0 0;
+}
+
+.App-header h2 {
+  font-size: 3vh;
+  margin: 0.75vh 0 1vh 0;
 }
 
 .App-link {

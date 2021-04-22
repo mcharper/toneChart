@@ -3,13 +3,14 @@ import { makeStyles } from "@material-ui/core";
 export const useStyles = makeStyles({
   root: {},
   swatchPiece: {
-    fontSize: "3vh",
     fontFamily: "Arial Narrow",
-    height: "21vh",
-    margin: "3px",
-    marginTop: "6px",
-    padding: "6vh",
+    fontSize: "2vh",
+    height: "12vh",
+    margin: "0.5vh",
+    marginTop: "2vh",
+    padding: "1vh",
     textAlign: "center",
-    width: "21vh",
+    transition: "background-color 1s",
+    width: "12vh",
   },
 });

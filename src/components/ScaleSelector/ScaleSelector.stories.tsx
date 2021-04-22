@@ -1,8 +1,8 @@
 import { Story } from "@storybook/react";
 
-import { Scale } from "../../models/Scale";
 import { ScaleSelector } from "./ScaleSelector";
 import { ScaleSelectorProps } from "./ScaleSelectorProps";
+import { Scale } from "../../models/Scale";
 
 export default {
   component: ScaleSelector,
@@ -16,6 +16,6 @@ const Template: Story<ScaleSelectorProps> = (args) => (
 export const Default = Template.bind({});
 Default.args = {
   onChange: (scale: Scale) => {
-    console.log("Scale Name is: " + scale.name);
+    console.log("Scale is: " + scale);
   },
 };

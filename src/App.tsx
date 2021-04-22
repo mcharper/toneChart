@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from "react";
+import { Grid } from "@material-ui/core";
 import Color from "color";
 
-import { ScaleSelector } from "./components/ScaleSelector/ScaleSelector";
 import { SwatchPalette } from "./components/SwatchPalette/SwatchPalette";
-import { Scale } from "./models/Scale";
 import { Swatch } from "./models/Swatch";
-import "./App.css";
+import { ScaleSelector } from "./components/ScaleSelector/ScaleSelector";
 import { OctaveSelector } from "./components/OctaveSelector/OctaveSelector";
-import { Grid } from "@material-ui/core";
 import { PianoKeyboard } from "./components/PianoKeyboard/PianoKeyboard";
-import { GridListSelector } from "./components/GridListSelector/GridListSelector";
+import "./App.css";
+import { MidiPlayer } from "./components/MidiPlayer/MidiPlayer";
 
 function App() {
   const initialPalette: Array<Swatch> = [
@@ -30,8 +29,8 @@ function App() {
   const [octave, setOctave] = useState(4);
   const [root, setRoot] = useState(0);
   const [scale, setScale] = useState({
-    name: "ionian",
-    pattern: [0, 2, 4, 5, 7, 9, 11],
+    name: "Chromatic",
+    pattern: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
   });
   const [palette, setPalette] = useState(initialPalette);
   const [savedPalettes, setSavedPalettes] = useState([initialPalette]);
@@ -55,7 +54,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>Tone Chart</h1>
-        <p>Experiments in Sound and Colour</p>
+        <h2>Experiments in Sound and Colour</h2>
       </header>
 
       <Grid
@@ -69,8 +68,11 @@ function App() {
           <SwatchPalette palette={palette} />
         </Grid>
         <Grid item xs={6}>
-          <ScaleSelector onChange={(scale: Scale) => setScale(scale)} />
-          {/* <GridListSelector onChange={(ev) => {}} /> */}
+          <ScaleSelector
+            onChange={(scale) => {
+              setScale(scale);
+            }}
+          />
         </Grid>
         <Grid item xs={6}>
           <Grid container>
@@ -86,6 +88,11 @@ function App() {
                   setRoot(midiNote % 12);
                 }}
               />
+              {/* <MidiPlayer
+                midiSequence={scale.pattern.map((n) => {
+                  return n + 60;
+                })}
+              ></MidiPlayer> */}
             </Grid>
           </Grid>
         </Grid>
