@@ -26,14 +26,14 @@ export const scales: Array<Scale> = [
     id: 2,
     name: "Pentatonic Minor",
     description: "Jazz, folk, rock solos",
-    image: "Pentatonic minor.jpg",
+    image: "pentatonic minor.jpg",
     pattern: [0, 3, 5, 7, 10],
   },
   {
     id: 3,
     name: "Pentatonic Major",
     description: "Cheerful Eastern sound",
-    image: "Pentatonic major.jpg",
+    image: "pentatonic major.jpg",
     pattern: [0, 2, 4, 7, 9],
   },
   {
