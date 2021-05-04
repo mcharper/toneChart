@@ -17,7 +17,14 @@ export const SwatchPalette = ({ palette }: SwatchPaletteProps): JSX.Element => {
               backgroundColor: swatch.colour,
             }}
           >
-            <span>{swatch.label}</span>
+            <span
+              style={{
+                color: swatch.isDark ? "white" : "black",
+              }}
+            >
+              {swatch.label}
+            </span>
+            <span className={classes.tooltiptext}>{swatch.name}</span>
           </Grid>
         );
       })}

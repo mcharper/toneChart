@@ -18,14 +18,20 @@ Default.args = {
     {
       label: "A",
       colour: "hsl(0, 75%, 75%)",
+      name: "Red",
+      isDark: false,
     },
     {
       label: "B",
       colour: "hsl(120, 75%, 75%)",
+      name: "Green",
+      isDark: false,
     },
     {
       label: "C",
       colour: "hsl(240, 75%, 75%)",
+      name: "Blue",
+      isDark: false,
     },
   ],
 };

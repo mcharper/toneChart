@@ -8,24 +8,35 @@ import { ScaleSelector } from "./components/ScaleSelector/ScaleSelector";
 import { OctaveSelector } from "./components/OctaveSelector/OctaveSelector";
 import { PianoKeyboard } from "./components/PianoKeyboard/PianoKeyboard";
 import "./App.css";
-import { MidiPlayer } from "./components/MidiPlayer/MidiPlayer";
+import { ColourModelControlPanel } from "./components/ColourModelControlPanel/ColourModelControlPanel";
 
 function App() {
   const initialPalette: Array<Swatch> = [
     {
       label: "A",
       colour: "hsl(0, 75%, 75%)",
+      name: "Red",
+      isDark: false,
     },
     {
       label: "1",
       colour: "hsl(120, 75%, 75%)",
+      name: "Green",
+      isDark: false,
     },
     {
       label: "1",
       colour: "hsl(240, 75%, 75%)",
+      name: "Blue",
+      isDark: false,
     },
   ];
 
+  const [modelParameters, setModelParameters] = useState({
+    startingAngle: 0,
+    lightenAcrossScale: true,
+    desaturateAcrossScale: true,
+  });
   const [octave, setOctave] = useState(4);
   const [root, setRoot] = useState(0);
   const [scale, setScale] = useState({
@@ -36,19 +47,25 @@ function App() {
   const [savedPalettes, setSavedPalettes] = useState([initialPalette]);
 
   useEffect(() => {
-    const offsetAngle = root * 30;
+    const offsetAngle = modelParameters.startingAngle + root * 30;
     const lightness = octave * 10;
     const swatchColours = scale.pattern.map((scaleIndex) => {
       const hue = (offsetAngle + scaleIndex * 30) % 360;
-      const colour = Color.hsl(hue, 75, lightness);
+      const colour = Color.hsl(
+        hue,
+        modelParameters.desaturateAcrossScale ? 75 - scaleIndex * 3 : 75,
+        modelParameters.lightenAcrossScale ? lightness + scaleIndex : lightness
+      );
       const hex = colour.hex();
       return {
         label: hex,
         colour: colour.string(),
+        name: colour.keyword(),
+        isDark: colour.isDark(),
       };
     });
     setPalette(swatchColours);
-  }, [octave, root, scale]);
+  }, [octave, root, scale, modelParameters]);
 
   return (
     <div className="App">
@@ -62,10 +79,29 @@ function App() {
         direction="row"
         spacing={4}
         justify="flex-start"
-        alignItems="flex-start"
+        alignItems="center"
       >
-        <Grid item xs={12}>
+        <Grid item xs={6}>
           <SwatchPalette palette={palette} />
+        </Grid>
+        <Grid item xs={6}>
+          <ColourModelControlPanel
+            setLightenAsPitchIncreases={(val) =>
+              setModelParameters({
+                ...modelParameters,
+                lightenAcrossScale: val,
+              })
+            }
+            setDesaturateAsPitchIncreases={(val) =>
+              setModelParameters({
+                ...modelParameters,
+                lightenAcrossScale: val,
+              })
+            }
+            setStartingAngle={(val) =>
+              setModelParameters({ ...modelParameters, startingAngle: val })
+            }
+          />
         </Grid>
         <Grid item xs={6}>
           <ScaleSelector
