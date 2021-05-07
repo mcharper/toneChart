@@ -12,7 +12,7 @@ A possible spinoff would be a visualiser to plug into wheelibin's synaesthesia.
 
 https://mcharper.github.io/toneChart/
 
-# Thoughts on how sound and colour may be related
+# Thoughts on sound and colour
 
 There are reasons to think there might be some sort of relationship. We use some of the same language to describe music and colour: harmony, tone, light, dark, loud, subdued etc. Many people with synaesthesia seem to perceive a relationship directly. 
 
@@ -44,7 +44,7 @@ Lightness:
 
 I'm assuming a 12-tone equal temperament tuning system for now.
 
-# Running the app locally
+# Running locally
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
