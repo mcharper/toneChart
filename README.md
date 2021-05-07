@@ -6,7 +6,7 @@ I'm interested in the kind of relationship that sound might have to colour. The 
 
 A possible spinoff would be a visualiser to plug into wheelibin's synaesthesia.
 
-![Tone Chart](https://github.com/mcharper/toneChart/master/ToneChart Demo.PNG "Tone Chart")
+![Tone Chart](https://github.com/mcharper/toneChart/blob/main/ToneChart%20Demo.PNG "Tone Chart")
 
 # Demo
 
@@ -16,7 +16,7 @@ https://mcharper.github.io/toneChart/
 
 There are reasons to think there might be some sort of relationship. We use some of the same language to describe music and colour: harmony, tone, light, dark, loud, subdued etc. Many people with synaesthesia seem to perceive a relationship directly. 
 
-I'm not sure they are connected at a physical level - there are so many differences between sound and light energy. And how we process the signals seems very different - for example pitch is related logarithmically with respect to frequency.
+I'm not sure they are connected at a physical level - there are so many differences between sound and light energy. And how we process the signals seems very different - for example pitch is perceived logarithmically with respect to frequency.
 
 If there is a connection, it's probably inside our heads.
 
@@ -37,6 +37,8 @@ Saturation:
 
 Lightness:
 - I plan to use this to model the octave relationship between sounds. We hear C4 (Middle C) as being recognisably the same note as C3 (the C below that on the piano keyboard) but higher. So I want to use a different "version" of the same hue to simulate this.
+
+![Colour Wheel](https://upload.wikimedia.org/wikipedia/commons/d/db/RGB_color_wheel_24.svg "Colour Wheel")
 
 # Assumptions
 
