@@ -1,6 +1,6 @@
 # Intro
 
-This project arose out of a conversation with [wheelibin](http://github.com/wheelibin) about his excellent [synaesthesia](https://github.com/wheelibin/synaesthesia) project, which itself arose out of another conversation relating to synaesthesia.
+This project arose out of a conversation with [wheelibin](http://github.com/wheelibin) about his excellent [synaesthesia](https://github.com/wheelibin/synaesthesia) project, which itself arose out of another conversation relating to [synaesthesia](https://en.wikipedia.org/wiki/Synesthesia).
 
 I'm interested in the kind of relationship that sound might have to colour. The idea of this project is simply to provide a playground for experimenting with the idea.
 
