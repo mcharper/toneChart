@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Grid } from "@material-ui/core";
 import Color from "color";
+import Abcjs from "react-abcjs";
 
 import { SwatchPalette } from "./components/SwatchPalette/SwatchPalette";
 import { Swatch } from "./models/Swatch";
@@ -138,6 +139,13 @@ function App() {
           })}
         </Grid>
       </Grid>
+
+      <Abcjs
+        abcNotation={"X:1\nM:4/4\nM:4/4\nK:C\n|:CDEFGAB"}
+        parserParams={{}}
+        engraverParams={{ responsive: "resize" }}
+        renderParams={{ viewportHorizontal: true }}
+      />
     </div>
   );
 }
