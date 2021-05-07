@@ -6,6 +6,8 @@ I'm interested in the kind of relationship that sound might have to colour. The 
 
 A possible spinoff would be a visualiser to plug into wheelibin's synaesthesia.
 
+![Tone Chart](https://github.com/mcharper/toneChart/master/ToneChart Demo.PNG "Tone Chart")
+
 # Demo
 
 https://mcharper.github.io/toneChart/
